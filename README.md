@@ -13,4 +13,4 @@ npm install
 npm start
 ```
 
-### All my plugins and scripts will be using this proxy which I will be hosting to public so end users of my plugins and scripts wont need to deal with this proxy. They will just install plugins/scripts on Xbox and use them out-of-the-box.
+**All my plugins and scripts will be using this proxy which I will be hosting to the public. End users of my plugins and scripts wont need to deal with this setting up proxy. They will just install plugins/scripts on Xbox and use them out-of-the-box.**
