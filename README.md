@@ -12,5 +12,54 @@ cd xbox-proxy
 npm install
 npm start
 ```
+## How to send request
+Let's say you want to send following HTTPS request:
+```console
+{
+    "method": "get",
+    "url": "https://vid.puffyan.us/api/v1/search",
+    "headers": {
+        "accept": "application/json",
+        "user-agent": "xbox-youtube",
+        "content-type": "application/json"
+    },
+    "params": {
+        "q": "modern talking",
+        "region": "US",
+        "type": "video",
+        "page": "1"
+    }
+}
+```
+
+To do that you will be sending HTTP request to URL of Proxy. Headers and Query Params will be sended as usual but Body will have two params properties: first is url which is url of API and second is actual body. So to send request inside Python on XBMC4Xbox you will write this:
+
+```
+import requests
+
+HEADERS = {
+    "accept": "application/json",
+    "user-agent": "xbox-youtube",
+    "content-type": "application/json"
+},
+PARAMS = {
+    "q": "modern talking",
+    "region": "US",
+    "type": "video",
+    "page": "1"
+}
+BODY = {
+    "url": "https://vid.puffyan.us/api/v1/search",
+    "body: {
+        "something": something,
+        .
+        .
+        .
+    }
+}
+
+response = requests.get(url_of_proxy, headers=HEADERS, params=PARAMS, json=body)
+// do something with response
+```
 
 **All my plugins and scripts will be using this proxy which I will be hosting to the public. End users of my plugins and scripts wont need to deal with this setting up proxy. They will just install plugins/scripts on Xbox and use them out-of-the-box.**
