@@ -32,7 +32,7 @@ Let's say you want to send following HTTPS request:
 }
 ```
 
-To do that you will be sending HTTP request to URL of Proxy. Headers and Query Params will be sended as usual but Body will have two params properties: first is url which is url of API and second is actual body. So to send request inside Python on XBMC4Xbox you will write this:
+To do that you will be sending HTTP request to URL of Proxy. Headers and Query Params will be sended as usual but Body will have two properties: first is url which is url of API and second is actual body. So to send request inside Python on XBMC4Xbox you will write this:
 
 ```
 import requests
